@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Juicy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #212529;
+            color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-top: 100px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            background-color: #343a40;
+            color: #f8f9fa;
+            border: 1px solid #ced4da;
+        }
+
+        .form-control:focus {
+            background-color: #495057;
+            color: #ffffff;
+            border-color: #ffd700;
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn-light {
+            background-color: #ffd700;
+            color: #333;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-light:hover {
+            background-color: #ffffff;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-dark text-light">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Juicy Logo" style="width: 40px; height: auto; margin-right: 8px;">
+                Juicy
+            </a>
+        </nav>
+    </header>
+
+    <div class="container py-5">
+        <h2 class="text-center">Create Your Account</h2>
+        <div class="text-center mb-4">
+            <button class="btn btn-light" onclick="window.location.href='index.html'">Home</button>
+        </div>
+        <form id="registerForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-light btn-lg">Register</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function validateForm() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+
+            window.location.href = "index.html";
+            return false;
+        }
+    </script>
+</body>
+
+</html>
